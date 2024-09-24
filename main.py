@@ -40,6 +40,15 @@ si2 = np.zeros((L, 1))
 si3 = np.zeros((L, 1))
 si4 = np.zeros((L, 1))
 
+# Generate k values
+k_values = np.arange(L + 1)
+
+w5 = np.piecewise(k_values, 
+                         [k_values < 165, 
+                          (k_values >= 165) & (k_values < 330), 
+                          k_values >= 330], 
+                         [1.4, 1.6, 1.3])
+
 #Simulation Loop
 
 for k in range(1, L-1):
@@ -85,3 +94,14 @@ for k in range(1, L-1):
     y2[k+1] = 0.6 * np.cos(y2[k]) + 0.3 * y2[k] + u2[k]
     y3[k+1] = (y3[k] / 1 + y3[k]^2) + u4[k]
     y4[k+1] = (y3[k] / 1 + y3[k]^2) + u4[k]^3
+
+
+
+plt.plot(k_values, w5, label="w5(k)", color='b', drawstyle='steps-post')
+plt.xlabel('k')
+plt.ylabel('w5(k)')
+plt.title('Piecewise Constant Function w5(k)')
+plt.grid(True)
+plt.legend()
+plt.show()
+
