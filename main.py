@@ -97,10 +97,10 @@ for k in range(L):
         # si3[k] = y1[k] - 2 * y3[k] + y4[k]
         # si4[k] = y2[k] - y4[k] - w6[k]
 
-        si1[k] = 
-        si2[k] = 
-        si3[k] = 
-        si4[k] = 
+        si1[k] = y2[k] - 2 * y1[k] + w5[k]
+        si2[k] = y3[k] - y2[k]
+        si3[k] = y4[k] - 2 * y3[k] + y1[k]
+        si4[k] = y2[k] - 2* y4[k] + w6[k]
 
 
 
