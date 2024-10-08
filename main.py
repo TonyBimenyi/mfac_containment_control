@@ -2,11 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Define parameters
-rho = 0.25
-lambda_ = 2
-eta = 1
-mu = 2.5
-epsilon = 1* 10**(-8)
+rho = 0.1
+lambda_ = 5
+eta = 0.05
+mu = 1
+epsilon = 0.0001
 L = 500
 
 # Initialize arrays
@@ -56,12 +56,12 @@ w6[330:] = 1.1      # for k ≥ 330
 
 
 # Simulation loop
-for k in range(1, L - 1):
+for k in range(L):
     if k == 1:  
-        phi1[1] = 0.1
-        phi2[1] = 0
+        phi1[1] = 0.5
+        phi2[1] = 0.5
         phi3[1] = 0.5
-        phi4[1] = 0.5
+        phi4[1] = 0.5       
     elif k == 2:
         phi1[k] = phi1[k - 1] + eta * u1[k - 1] / (mu + u1[k - 1]**2) * (y1[k] - y1[k - 1] - phi1[k - 1] * u1[k - 1])
         phi2[k] = phi2[k - 1] + eta * u2[k - 1] / (mu + u2[k - 1]**2) * (y2[k] - y2[k - 1] - phi2[k - 1] * u2[k - 1])
@@ -82,10 +82,27 @@ for k in range(1, L - 1):
 
     else:
 
-        si1[k] = -y1[k] + w5[k] + y2[k] 
-        si2[k] = y1[k] - y2[k] + y3[k] + y4[k]
-        si3[k] = y1[k] + y2[k] - 2 * y3[k] + y4[k]
-        si4[k] = y2[k] + y3[k] - y4[k] + w6[k]
+        # si1[k] = -y1[k] + w5[k] + y2[k] 
+        # si2[k] = y1[k] - y2[k] + y3[k] + y4[k]
+        # si3[k] = y1[k] + y2[k] - 2 * y3[k] + y4[k]
+        # si4[k] = y2[k] + y3[k] - y4[k] + w6[k]
+
+        # si1[k] = y1[k] - y3[k] - w5[k]
+        # si2[k] = - y1[k] + 2 * y2[k] - y4[k]
+        # si3[k] = - y2[k] + y3[k]
+        # si4[k] = - y3[k] + y4[k] -w6[k] 
+
+        # si1[k] = -y1[k] + y2[k] -w5[k]
+        # si2[k] = -y2[k] + y3[k]
+        # si3[k] = y1[k] - 2 * y3[k] + y4[k]
+        # si4[k] = y2[k] - y4[k] - w6[k]
+
+        si1[k] = 
+        si2[k] = 
+        si3[k] = 
+        si4[k] = 
+
+
 
     if k == 1:
         u1[1] = 0
@@ -105,8 +122,8 @@ for k in range(1, L - 1):
 
     y1[k+1] = 0.7 * y1[k] + u1[k]
     y2[k+1] = 0.6 * np.cos(y2[k]) + 0.3 * y2[k] + u2[k]
-    y3[k+1] = ((y3[k]) / (1 + y3[k]**2)) + u3[k]
-    y4[k+1] = ((y4[k]) / (1 + y4[k]**2)) + u4[k]**3
+    y3[k+1] = (y3[k]) / (1 + y3[k]**2) + u3[k]
+    y4[k+1] = (y4[k]) / (1 + y4[k]**2) + u4[k]**3
 
 # Plot w5(k), w6(k), y1(k), y2(k), y3(k), and y4(k)
 plt.figure(figsize=(8, 6))
