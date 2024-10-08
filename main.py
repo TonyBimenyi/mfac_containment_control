@@ -2,9 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Define parameters
-rho = 0.1
-lambda_ = 5
-eta = 0.05
+rho = 0.3
+lambda_ = 2
+eta = 0.5
 mu = 1
 epsilon = 0.0001
 L = 500
@@ -56,7 +56,7 @@ w6[330:] = 1.1      # for k ≥ 330
 
 
 # Simulation loop
-for k in range(L):
+for k in range(1, L-1):
     if k == 1:  
         phi1[1] = 0.5
         phi2[1] = 0.5
