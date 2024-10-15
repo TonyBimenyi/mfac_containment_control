@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # Define parameters
 rho = 0.3
-lambda_ = 2
+lambda_ = 0.5
 eta = 0.5
 mu = 1
 epsilon = 0.0001
@@ -128,12 +128,13 @@ for k in range(1, L-1):
 # Plot w5(k), w6(k), y1(k), y2(k), y3(k), and y4(k)
 plt.figure(figsize=(8, 6))
 
-plt.plot( w5, label="agent5", color='blue', linestyle='dashed', drawstyle='steps-post')
-plt.plot( w6, label="agent6", color='blue', linestyle='dashed', drawstyle='steps-post')
+
 plt.plot( y1[:-1], label="agent1", color='orange', linestyle='solid')
 plt.plot( y2[:-1], label="agent2", color='green', linestyle='solid')
 plt.plot( y3[:-1], label="agent3", color='red', linestyle='solid')
 plt.plot( y4[:-1], label="agent4", color='purple', linestyle='solid')
+plt.plot( w5, label="agent5(Leader 1)", color='blue', linestyle='dashed', drawstyle='steps-post')
+plt.plot( w6, label="agent6(Leader 2)", color='blue', linestyle='dashed', drawstyle='steps-post')
 
 plt.grid(True)
 plt.xlabel("time step", fontsize=12)
