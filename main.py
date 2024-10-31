@@ -130,5 +130,7 @@ for i, lambda_ in enumerate(lambda_values):
     ax.set_ylabel("outputs", fontsize=12)
     ax.legend(fontsize=10)
 
+plt.figure()
+
 plt.tight_layout()
 plt.show()
