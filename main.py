@@ -111,7 +111,7 @@ def simulate(lambda_):
 
 # Different values of lambda_
 lambda_values = [5, 3, 2, 0.5]
-fig, axs = plt.subplots(2, 2, figsize=(12, 10))
+fig, axs = plt.subplots(2, 2, figsize=(15, 10))
 
 for i, lambda_ in enumerate(lambda_values):
     y1, y2, y3, y4, w5, w6 = simulate(lambda_)
@@ -131,6 +131,9 @@ for i, lambda_ in enumerate(lambda_values):
     ax.legend(fontsize=10)
 
 plt.figure()
+for i, lambda_ in enumerate(lambda_values):
+    y1, y2, y3, y4, w5, w6 = simulate(lambda_)
+    
 
 plt.tight_layout()
 plt.show()
