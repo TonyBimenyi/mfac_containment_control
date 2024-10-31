@@ -1,5 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import rcParams
+
+# Setting the font to Poppins (Ensure it's installed on your system)
+# rcParams['font.family'] = 'times new roman'
 
 # Define other parameters
 rho = 0.3
