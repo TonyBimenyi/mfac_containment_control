@@ -129,17 +129,17 @@ for k in range(1, L-1):
 plt.figure(figsize=(8, 6))
 
 
-# plt.plot( y1[:-1], label="agent1", color='orange', linestyle='solid')
-# plt.plot( y2[:-1], label="agent2", color='green', linestyle='solid')
-# plt.plot( y3[:-1], label="agent3", color='red', linestyle='solid')
-# plt.plot( y4[:-1], label="agent4", color='purple', linestyle='solid')
-# plt.plot( w5, label="agent5(Leader 1)", color='blue', linestyle='dashed', drawstyle='steps-post')
-# plt.plot( w6, label="agent6(Leader 2)", color='blue', linestyle='dashed', drawstyle='steps-post')
+plt.plot( y1[:-1], label="agent1", color='orange', linestyle='solid')
+plt.plot( y2[:-1], label="agent2", color='green', linestyle='solid')
+plt.plot( y3[:-1], label="agent3", color='red', linestyle='solid')
+plt.plot( y4[:-1], label="agent4", color='purple', linestyle='solid')
+plt.plot( w5, label="agent5(Leader 1)", color='blue', linestyle='dashed', drawstyle='steps-post')
+plt.plot( w6, label="agent6(Leader 2)", color='blue', linestyle='dashed', drawstyle='steps-post')
 
-plt.plot( u1[:-1], label="agent1", color='orange', linestyle='solid')
-plt.plot( u2[:-1], label="agent2", color='green', linestyle='solid')
-plt.plot( u3[:-1], label="agent3", color='red', linestyle='solid')
-plt.plot( u4[:-1], label="agent4", color='purple', linestyle='solid')
+# plt.plot( u1[:-1], label="agent1", color='orange', linestyle='solid')
+# plt.plot( u2[:-1], label="agent2", color='green', linestyle='solid')
+# plt.plot( u3[:-1], label="agent3", color='red', linestyle='solid')
+# plt.plot( u4[:-1], label="agent4", color='purple', linestyle='solid')
 
 
 
